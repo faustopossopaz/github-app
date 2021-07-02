@@ -1,0 +1,19 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title class="display-6 text-center">Commits history</ion-title>
+  </ion-toolbar>
+  <form class="container d-flex flex-column p-3">
+    <div>
+      <label class="form-label">User</label>
+      <input class="form-control" type="text" placeholder="{{user}}" disabled>
+    </div>
+    <div class="mt-2">
+      <label class="form-label">Repository</label>
+      <input class="form-control" type="text" placeholder="{{repo}}" disabled>
+    </div>
+  </form>
+</ion-header>
+
+<ion-content>
+  <app-commits-list></app-commits-list>
+</ion-content>
