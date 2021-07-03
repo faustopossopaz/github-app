@@ -1,3 +1,13 @@
 button {
-    margin: 0% 30%;
+    margin: 2% 30% 5% 30%;
+}
+
+.btn:hover {
+    color:white;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background: white;
 }

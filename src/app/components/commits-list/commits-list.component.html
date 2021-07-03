@@ -1,6 +1,23 @@
 <ion-header class="container d-flex flex-column ion-no-border">
-  <button class="btn btn-sm btn custom-button">Show commits</button>
+  <div class="d-flex">
+  <button class="btn btn-sm btn custom-button" (click)="getCommitsList()">Show commits</button>
+  </div>
 </ion-header>
 <ion-content>
-
+  <table class="table table-striped" *ngIf="showTable">
+    <thead>
+      <tr>
+        <th scope="col">Message</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commit of commitsList;">
+        <td>{{commit.commit.message}}</td> 
+        <td>{{commit.commit.author.name}}</td>       
+        <td>{{moment(commit.commit.author.date).format('DD/MM/YYYY HH:mm')}}</td> 
+      </tr>
+    </tbody>
+  </table> 
 </ion-content>
