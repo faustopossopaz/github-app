@@ -16,6 +16,4 @@ export class MainPage implements OnInit {
     this.user = environment.user
     this.repo = environment.repo
   }
-  
-
 }

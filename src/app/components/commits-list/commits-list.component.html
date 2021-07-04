@@ -1,9 +1,16 @@
 <ion-header class="container d-flex flex-column ion-no-border">
-  <div class="d-flex">
-  <button class="btn btn-sm btn custom-button" (click)="getCommitsList()">Show commits</button>
+  <div class="d-flex flex-column align-items-center">
+  <button class="btn btn-sm btn custom-button-commit" (click)="getCommitsList()">Show commits</button>
+  <i class="bi bi-arrow-clockwise" *ngIf="showPullToRefresh">Pull to refresh</i>
   </div>
 </ion-header>
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" disabled={{pullToRefresh}}>
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
   <table class="table table-striped" *ngIf="showTable">
     <thead>
       <tr>

@@ -1,3 +1,4 @@
+
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-title class="display-6 text-center">Commits history</ion-title>
@@ -13,9 +14,8 @@
     </div>
   </form>
 </ion-header>
-
-<ion-content>
-  <app-commits-list></app-commits-list>
+<ion-content [attr.scroll-y]=false>
+  <app-commits-list></app-commits-list>   
 </ion-content>
 <ion-footer>
   <i class="bi bi-github d-flex m-2 d-flex justify-content-center"></i>

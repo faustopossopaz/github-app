@@ -11,6 +11,8 @@ export class CommitsListComponent implements OnInit {
   moment: any = moment;
   commitsList: Array<any> = [];
   showTable: boolean = false;
+  showPullToRefresh: boolean = false;
+  pullToRefresh: boolean = true;
 
   constructor(private githubService: GithubService) { }
 
@@ -18,9 +20,12 @@ export class CommitsListComponent implements OnInit {
   }
 
   getCommitsList() {  
+    this.pullToRefresh = false;
     setTimeout(_=>{
       this.showTable = true;
+      this.showPullToRefresh = true;
     },500)
+  
     this.githubService.getCommitsList().subscribe( 
       (data:any) => {
         this.commitsList = data;
@@ -30,5 +35,14 @@ export class CommitsListComponent implements OnInit {
        console.log(err)
        alert(err.error.message)
       })  
+  }
+
+  doRefresh(event) {
+    document.getElementsByTagName('ion-refresher')[0].style.display = "block";
+    setTimeout(() => {
+      event.target.complete();
+      document.getElementsByTagName('ion-refresher')[0].style.display = "none";
+      this.getCommitsList();
+    }, 1000);
   }
 }
