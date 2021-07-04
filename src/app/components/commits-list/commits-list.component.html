@@ -1,7 +1,9 @@
 <ion-header class="container d-flex flex-column ion-no-border">
   <div class="d-flex flex-column align-items-center">
-  <button class="btn btn-sm btn custom-button-commit" (click)="getCommitsList()">Show commits</button>
-  <i class="bi bi-arrow-clockwise" *ngIf="showPullToRefresh">Pull to refresh</i>
+    <button class="btn btn-sm btn custom-button-commit animate__animated animate__fadeInDown" (click)="getCommitsList()">
+      Show commits
+    </button>
+    <i class="bi bi-arrow-clockwise animate__animated animate__fadeInDown" *ngIf="showPullToRefresh">Pull to refresh</i>
   </div>
 </ion-header>
 <ion-content>

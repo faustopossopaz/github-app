@@ -8,11 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class GithubService {
 
-
   constructor(private http: HttpClient) { }
 
   getCommitsList(): Observable<any>{
     const url = `https://api.github.com/repos/${environment.user}/${environment.repo}/commits`;
-      return this.http.get<any>(url);    
+    return this.http.get<any>(url);    
   }
 }
