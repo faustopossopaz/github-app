@@ -38,6 +38,4 @@ The goal of this app is shows git commit history of this same project.
  - Fausto Posso. 
 
 ---
-⌨️ con ❤️ by Fausto Posso Paz 😊
-\
-&nbsp;
+
